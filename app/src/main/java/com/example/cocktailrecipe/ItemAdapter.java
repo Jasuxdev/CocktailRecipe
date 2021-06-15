@@ -46,7 +46,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
-        holder.bind(cocktailModelList.get(position));
+        holder.bind(cocktailModelList.get(position), position);
     }
 
     @Override
@@ -71,11 +71,11 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
             itemView.setOnClickListener(this);
         }
 
-        void bind(CocktailModel model) {
+        void bind(CocktailModel model, int position) {
             titleTextView.setText(model.getTitle());
             Bundle bundle = new Bundle();
             bundle.putString("url", model.getSmallImage());
-            mLoaderManager.restartLoader(0, bundle, this);
+            mLoaderManager.restartLoader(100+position, bundle, this);
         }
 
         @Override
