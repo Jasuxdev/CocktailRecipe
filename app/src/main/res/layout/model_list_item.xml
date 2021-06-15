@@ -22,7 +22,8 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
         android:text="@string/cocktail_title"
         android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Title"
-        android:textColor="#dddddd" />
+        android:textColor="@color/colorPrimaryDark" />
 </RelativeLayout>

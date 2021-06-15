@@ -1,4 +1,4 @@
-package com.example.distributingdata;
+package com.example.cocktailrecipe;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -131,7 +131,6 @@ public class MainActivity extends AppCompatActivity implements ItemAdapter.ListI
                 // Get the current item information
                 JSONObject cocktail = itemsArray.getJSONObject(i);
 
-
                 Log.d(LOG_TAG, cocktail.toString());
 
                 // Try to get the author and title from the current item, catch if
@@ -144,15 +143,20 @@ public class MainActivity extends AppCompatActivity implements ItemAdapter.ListI
                     description = cocktail.getString("strInstructions");
 
                     ingredients.setLength(0);
-                    for(int k=1; k < 16; k++) {
+                    for(int k = 1; k < 16; k++) {
                         String ingredient = cocktail.getString("strIngredient" + k);
                         String measure = cocktail.getString("strMeasure" + k).trim();
+
                         if (ingredient != null && ingredient != "" && ingredient != "null") {
+
                             ingredients.append(ingredient);
-                            if (measure != null && measure != "" && measure != "null")
-                                ingredients.append(" ("+measure+")");
-                            if (k < 15)
-                                ingredients.append(", ");
+
+                            if (measure != null && measure != "" && measure != "null") {
+                                ingredients.append(" (" + measure + ")");
+                            }
+                            if (k < 14) {
+                                ingredients.append("\n");
+                            }
                         }
                     }
 
@@ -175,17 +179,6 @@ public class MainActivity extends AppCompatActivity implements ItemAdapter.ListI
             ItemAdapter mAdapter = new ItemAdapter(mCocktailList, getSupportLoaderManager(), this);
             mRecyclerView.setAdapter(mAdapter);
             mRecyclerView.setVisibility(View.VISIBLE);
-            // If both are found, display the result
-//            if (title != null && authors != null) {
-//                mLoadingIndicator.setVisibility(View.INVISIBLE);
-//                mTitleText.setText(title);
-//                mAuthorText.setText(authors);
-//            } else {
-//                // If none are found, update the UI to show failed results set loader to invisible
-//                mLoadingIndicator.setVisibility(View.INVISIBLE);
-//                mTitleText.setText(R.string.no_results);
-//                mAuthorText.setText("");
-//            }
         } catch (Exception e) {
             // If onPostExecute does not receive a proper JSON string,
             // update the UI to show failed results
@@ -224,6 +217,9 @@ public class MainActivity extends AppCompatActivity implements ItemAdapter.ListI
                     mRecyclerView.setAdapter(mAdapter);
 
                     return true;
+                }
+                if (mErrorMessage.getVisibility() == View.VISIBLE) {
+                    mErrorMessage.setVisibility(View.INVISIBLE);
                 }
         }
 

@@ -1,19 +1,15 @@
-package com.example.distributingdata;
+package com.example.cocktailrecipe;
 
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.loader.content.AsyncTaskLoader;
 
-import com.example.distributingdata.utilities.NetworkUtils;
-
 import java.io.InputStream;
 import java.net.URL;
-import java.util.stream.Stream;
 
 /// Load bitmap from an image url
 public class AsyncImageLoader extends AsyncTaskLoader<Bitmap> {

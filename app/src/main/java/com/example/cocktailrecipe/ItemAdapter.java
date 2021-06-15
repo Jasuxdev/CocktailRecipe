@@ -1,4 +1,4 @@
-package com.example.distributingdata;
+package com.example.cocktailrecipe;
 
 import android.content.Context;
 import android.graphics.Bitmap;

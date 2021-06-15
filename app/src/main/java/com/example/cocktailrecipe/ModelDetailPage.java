@@ -1,4 +1,4 @@
-package com.example.distributingdata;
+package com.example.cocktailrecipe;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -24,7 +24,7 @@ public class ModelDetailPage extends AppCompatActivity implements LoaderManager.
 
         TextView title = findViewById(R.id.cocktail_title_text);
         TextView glass = findViewById(R.id.cocktail_glass);
-        TextView description = findViewById(R.id.cocktail_description);
+        TextView description = findViewById(R.id.cocktail_instructions);
         TextView ingredients = findViewById(R.id.cocktail_ingredients);
 
         if (extras != null) {

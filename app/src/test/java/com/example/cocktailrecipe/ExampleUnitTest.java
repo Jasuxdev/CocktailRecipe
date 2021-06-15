@@ -1,4 +1,4 @@
-package com.example.distributingdata;
+package com.example.cocktailrecipe;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.example.distributingdata.utilities;
+package com.example.cocktailrecipe.utilities;
 
 import android.net.Uri;
 import android.util.Log;

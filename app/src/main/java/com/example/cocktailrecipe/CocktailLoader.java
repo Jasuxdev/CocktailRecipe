@@ -1,11 +1,11 @@
-package com.example.distributingdata;
+package com.example.cocktailrecipe;
 
 import android.content.Context;
 
 import androidx.annotation.Nullable;
 import androidx.loader.content.AsyncTaskLoader;
 
-import com.example.distributingdata.utilities.NetworkUtils;
+import com.example.cocktailrecipe.utilities.NetworkUtils;
 
 public class CocktailLoader extends AsyncTaskLoader<String> {
 

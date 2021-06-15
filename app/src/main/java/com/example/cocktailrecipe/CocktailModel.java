@@ -1,4 +1,4 @@
-package com.example.distributingdata;
+package com.example.cocktailrecipe;
 
 public class CocktailModel implements java.io.Serializable {
     private String mTitle;
